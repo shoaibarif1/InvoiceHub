@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvoiceHub - Invoices</title>
+    <title>Contoso Vendor Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -826,7 +826,7 @@
                     <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                 </svg>
             </div>
-            <span class="logo-text">InvoiceHub</span>
+            <span class="logo-text">Contoso Vendor Hub</span>
         </div>
         <div class="nav-right">
             <!-- ADDED: Overview link -->
@@ -869,12 +869,13 @@
             </div>
             <div class="filter-group">
                 <span class="filter-label">Date:</span>
-                <select class="filter-select" id="filter-date">
-                    <option>All Time</option>
-                    <option>This Month</option>
-                    <option>Last Month</option>
-                    <option>This Year</option>
-                </select>
+               <select class="filter-select" id="filter-date">
+    <option value="24h">Last 24 hours</option>
+    <option value="this-month">This Month</option>
+    <option value="last-month">Last Month</option>
+    <option value="this-year">This Year</option>
+    <option value="all" selected>All Time</option>
+</select>
             </div>
             <div class="filter-group">
                 <span class="filter-label">Amount:</span>
@@ -901,12 +902,76 @@
                         <tr>
                             <th>Vendor</th>
                             <th>Date</th>
-                            <th>Amount</th>
+                            <th>Amount/Type</th>
                             <th>Status</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody id="invoice-tbody">
+                        <tr>
+    <td>
+        <div class="vendor-info">
+            <span class="vendor-name">Acme Security Documentation</span>
+            <span class="invoice-id">INV-2026-0090</span>
+        </div>
+    </td>
+    <td>May 30, 2026</td>
+    <td class="amount">Security Documentation</td>
+    <td><span class="status-badge status-pending">Pending</span></td>
+    <td>
+        <a href="public/Acme_Security_Documentation.pdf.pdf" target="_blank" class="pdf-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            PDF
+        </a>
+    </td>
+</tr>                 
+
+<tr>
+    <td>
+        <div class="vendor-info">
+            <span class="vendor-name">Globex Compliance Inc. </span>
+            <span class="invoice-id">INV-2026-0091</span>
+        </div>
+    </td>
+    <td>May 15, 2026</td>
+    <td class="amount">Compliance Policy</td>
+    <td><span class="status-badge status-pending">Pending</span></td>
+    <td>
+        <a href="/public/Globex_Compliance_Policy.pdf" target="_blank" class="pdf-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            PDF
+        </a>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div class="vendor-info">
+            <span class="vendor-name">Office solution </span>
+            <span class="invoice-id">INV-2026-0092</span>
+        </div>
+    </td>
+    <td>April 30, 2026</td>
+    <td class="amount">Security Documentation</td>
+    <td><span class="status-badge status-pending">Pending</span></td>
+    <td>
+        <a href="/public/Acme_Security_Documentation_v2.pdf" target="_blank" class="pdf-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            PDF
+        </a>
+    </td>
+</tr>
                         <tr>
                             <td>
                                 <div class="vendor-info">
@@ -918,7 +983,7 @@
                             <td class="amount">$4,235.00</td>
                             <td><span class="status-badge status-pending">Pending</span></td>
                             <td>
-                                <a href="https://drive.google.com/file/d/1wY6DL3m_EP4fDKI_rzpO6Exu6j3_Dpt9/view?usp=sharing" class="pdf-link">
+                                <a href="./public/Invoice-2025-0089.pdf" class="pdf-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -939,7 +1004,7 @@
                             <td class="amount">$1,250.00</td>
                             <td><span class="status-badge status-paid">Paid</span></td>
                             <td>
-                                <a href="https://drive.google.com/file/d/1wY6DL3m_EP4fDKI_rzpO6Exu6j3_Dpt9/view?usp=sharing" class="pdf-link">
+                                <a href="./public/Invoice-2025-0089.pdf" class="pdf-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -960,7 +1025,7 @@
                             <td class="amount">$6,750.00</td>
                             <td><span class="status-badge status-paid">Paid</span></td>
                             <td>
-                                <a href="https://drive.google.com/file/d/1wY6DL3m_EP4fDKI_rzpO6Exu6j3_Dpt9/view?usp=sharing" class="pdf-link">
+                                <a href="./public/Invoice-2025-0089.pdf" class="pdf-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -981,7 +1046,7 @@
                             <td class="amount">$9,200.00</td>
                             <td><span class="status-badge status-overdue">Overdue</span></td>
                             <td>
-                                <a href="https://drive.google.com/file/d/1wY6DL3m_EP4fDKI_rzpO6Exu6j3_Dpt9/view?usp=sharing" class="pdf-link">
+                                <a href="./public/Invoice-2025-0089.pdf" class="pdf-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -1002,7 +1067,7 @@
                             <td class="amount">$8,900.00</td>
                             <td><span class="status-badge status-paid">Paid</span></td>
                             <td>
-                                <a href="https://drive.google.com/file/d/1wY6DL3m_EP4fDKI_rzpO6Exu6j3_Dpt9/view?usp=sharing" class="pdf-link">
+                                <a href="./public/Invoice-2025-0089.pdf" class="pdf-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -1023,7 +1088,7 @@
                             <td class="amount">$5,200.00</td>
                             <td><span class="status-badge status-paid">Paid</span></td>
                             <td>
-                                <a href="https://drive.google.com/file/d/1wY6DL3m_EP4fDKI_rzpO6Exu6j3_Dpt9/view?usp=sharing" class="pdf-link">
+                                <a href="./public/Invoice-2025-0089.pdf" class="pdf-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -1044,7 +1109,7 @@
                             <td class="amount">$2,100.00</td>
                             <td><span class="status-badge status-paid">Paid</span></td>
                             <td>
-                                <a href="https://drive.google.com/file/d/1wY6DL3m_EP4fDKI_rzpO6Exu6j3_Dpt9/view?usp=sharing" class="pdf-link">
+                                <a href="./public/Invoice-2025-0089.pdf" class="pdf-link">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -1332,19 +1397,44 @@
                 if (amountVal === 'Over $5,000' && rowAmount <= 5000) showRow = false;
 
                 // 4. Date Filter
-                if (dateVal === 'This Month') {
-                    if (rowDate.getMonth() !== currentMonth || rowDate.getFullYear() !== currentYear) showRow = false;
-                } else if (dateVal === 'Last Month') {
-                    let lastMonth = currentMonth - 1;
-                    let yearOfLastMonth = currentYear;
-                    if (lastMonth < 0) {
-                        lastMonth = 11; // December
-                        yearOfLastMonth--;
-                    }
-                    if (rowDate.getMonth() !== lastMonth || rowDate.getFullYear() !== yearOfLastMonth) showRow = false;
-                } else if (dateVal === 'This Year') {
-                    if (rowDate.getFullYear() !== currentYear) showRow = false;
-                }
+            // 4. Date Filter
+if (dateVal === '24h') {
+    const twentyFourHoursAgo = new Date();
+    twentyFourHoursAgo.setHours(twentyFourHoursAgo.getHours() - 24);
+
+    if (rowDate < twentyFourHoursAgo) {
+        showRow = false;
+    }
+}
+else if (dateVal === 'this-month') {
+    if (
+        rowDate.getMonth() !== currentMonth ||
+        rowDate.getFullYear() !== currentYear
+    ) {
+        showRow = false;
+    }
+}
+else if (dateVal === 'last-month') {
+    let lastMonth = currentMonth - 1;
+    let yearOfLastMonth = currentYear;
+
+    if (lastMonth < 0) {
+        lastMonth = 11;
+        yearOfLastMonth--;
+    }
+
+    if (
+        rowDate.getMonth() !== lastMonth ||
+        rowDate.getFullYear() !== yearOfLastMonth
+    ) {
+        showRow = false;
+    }
+}
+else if (dateVal === 'this-year') {
+    if (rowDate.getFullYear() !== currentYear) {
+        showRow = false;
+    }
+}
 
                 // Apply display property
                 row.style.display = showRow ? '' : 'none';
