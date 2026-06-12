@@ -963,7 +963,7 @@
                     <span class="invoice-id">INV-2026-0090</span>
                   </div>
                 </td>
-                <td>June 12, 2026</td>
+                <td id="acme-date"></td>
                 <td class="amount">Security Documentation</td>
                 <td>
                   <span class="status-badge status-pending">Pending</span>
@@ -1695,6 +1695,16 @@
 
       // ADDED: Initial pagination update
       updatePaginationInfo();
+      // Auto-update Acme date to today
+      const acmeDate = document.getElementById("acme-date");
+
+      if (acmeDate) {
+        acmeDate.textContent = new Date().toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+      }
     </script>
   </body>
 </html>
